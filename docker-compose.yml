@@ -1,0 +1,19 @@
+services:
+  flask_app:
+    build: .
+    ports:
+      - "5000:5000"
+    command: python app.py
+    volumes:
+      - .:/app
+    # Esto asegura que si cambias archivos, el contenedor los vea (útil en desarrollo)
+
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''
+    volumes:
+      - .:/app
+    # Así los notebooks pueden ver y guardar cambios en el repo
+
