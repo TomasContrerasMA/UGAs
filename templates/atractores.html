@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Hola mundo desde el titulo</title>
+    <meta charset="UTF-8">
+    <title>Mapa Insertado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .map-container {
+            margin-top: 30px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-	<h1>Hola Mundo</h1>
-	<br />
+
+        <h1>Flujos comerciales</h1>
+
         <label for="flujo">Selecciona una opción:</label>
         <select id="flujo">
             <option value="/">Pantalla principal</option>
@@ -33,18 +48,16 @@
                 }
             }
         </script>
-        
-	<h1>HTML Hypertext Markup Language</h1>
-	<h2>Elementos</h2>
-		<ul>
-			<li>Etiquetas que abren y cierran &lt foo &gt &lt /foo &gt </li>
-			<li>Tienen atributos: &lt img src="imagen.jpg"&gt &lt /img &gt </li>
-		</ul>	
-	<h2>Entidades</h2>
-		<ul>
-			<li>Esto es un ampersand &amp </li>
-			<li>Esto es un underbraket &lt </li>
-			<li>Esto es un otrobraket &gt </li>
-		</ul>
+            
+        <h1>Prueba de Mapa con Include</h1>
+
+        <p>Debajo se incluye el HTML generado por Folium:</p>
+
+        <h2>Mapa de calor</h2>
+
+        <iframe src="{{ url_for('static', filename='distribucion_oxxos.html') }}"
+                width="100%" height="500" style="border: none;"></iframe>
+
 </body>
 </html>
+
